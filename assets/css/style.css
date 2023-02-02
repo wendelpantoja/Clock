@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter";
+}
+
+:root {
+    --color-white: #FFFFFF;
+    --color-black: #333333;
+    --color-vetor: #FF4110;
+    --color-cinza: #D9D9D9;
+    --color-fontsize-color: #8a8a8a;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+}
+
+body.dark {
+    background-color: rgba(0, 0, 15, 0.973);
+}
+
+h2 {
+    color:  var(--color-black);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#date_string {
+    font-size: 12px;
+}
+
+.numbers {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.numbers.dark_font_size, h2.dark_font_size {
+    color: var(--color-fontsize-color);
+}
+
+
+/* ===== ICONS =====*/
+
+.icons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.icon_clear {
+    display: none;
+}
+
+.icons
+.icon_dark, .icon_clear i {
+    font-size: 25px;
+    color: var(--color-fontsize-color);
+    cursor: pointer;
+}
+
+/* ===== CONTAINER */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 362px;
+    height: 100%;
+}
+
+/* ===== CONTAINER CLOCK ===== */
+
+.clock_container.dark {
+    background-color: rgba(0, 0, 15, 0);
+    box-shadow: 0px 4px 50px rgb(0, 0, 0);
+}
+
+.clock_container {
+    position: relative;
+    width: 362px;
+    height: 445px;
+    background-color: var(--color-white);
+    box-shadow: 0px 4px 50px rgba(10, 6, 16, 0.1);
+    border-radius: 60px;
+    margin-bottom: 150px;
+}
+
+.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:  relative;  
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ===== NUMBERS AND BALL ===== */
+
+.ball_gray::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-cinza);
+    border-radius: 50%;
+}
+
+
+.ball_gray {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.number_twelve {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ball_gray_one {
+    transform: rotate(30deg);
+}
+.ball_gray_two {
+    transform: rotate(60deg);
+}
+
+.number_three {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ball_gray_three {
+    transform: rotate(120deg);
+}
+.ball_gray_four {
+    transform: rotate(150deg);
+}
+
+.number_six {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ball_gray_five {
+    transform: rotate(210deg);
+}
+.ball_gray_six {
+    transform: rotate(240deg);
+}
+
+.number_nine {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ball_gray_seven {
+    transform: rotate(300deg);
+}
+.ball_gray_eight {
+    transform: rotate(330deg);
+}
+
+.clock 
+.ball_black {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-black);
+}
+
+.clock 
+.hour, 
+.minutes, 
+.seconds {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.clock 
+.hour {
+    width: 105px;
+    height: 109px;
+    transform: rotateZ(90deg);
+}
+
+.clock 
+.hour::before {
+    content: '';
+    position: absolute;
+    width: .25rem;
+    height: 2.6rem;
+    background-color: var(--color-vetor);
+    border-radius: 8px;
+}
+
+.clock 
+.minutes {
+    width: 136px;
+    height: 135.5px;
+}
+
+.clock 
+.minutes::before {
+    content: '';
+    position: absolute;
+    width: .25rem;
+    height: 3.5rem;
+    background-color: var(--color-vetor);
+    border-radius: 8px;
+}
+
+.clock 
+.seconds {
+    width: 130px;
+    height: 130px;
+    transform: rotateZ(30deg);
+}
+
+.clock 
+.seconds::before {
+    position: absolute;
+    content: '';
+    width: .125rem;
+    height: 3.3rem;
+    background-color: var(--color-vetor);
+    border-radius: 8px;
+}
+
+.date_container {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+
+.active {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 423px) {
+    .container {
+        width: 300px;
+    }
+    .clock_container {
+        width: 300px;
+        height: 400px;
+    }
+    .clock {
+        width: 250px;
+        height: 250px;
+    }
+}
